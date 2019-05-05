@@ -8,6 +8,7 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -18,9 +19,24 @@ WebUI.openBrowser('https://music-iteazy.herokuapp.com/')
 
 WebUI.navigateToUrl('https://music-iteazy.herokuapp.com/')
 
-WebUI.setText(findTestObject('Search/Page_App nghe nhc/input_Collection_search'), 'Anh')
+WebUI.setText(findTestObject('Search/Page_App nghe nhc/input_Collection_search'), testTitle)
 
 WebUI.sendKeys(findTestObject('Search/Page_App nghe nhc/input_Collection_search'), Keys.chord(Keys.ENTER))
 
-WebUI.verifyElementVisible(findTestObject('Search/Page_App nghe nhc/div_result'), FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementVisible(findTestObject('Search/Page_App nghe nhc/Songs available'), FailureHandling.STOP_ON_FAILURE)
 
+result = WebUI.getText(findTestObject('Search/Page_App nghe nhc/Songs available'))
+
+WebUI.verifyMatch(result, "[0-9] Songs available", true)
+
+title = WebUI.getText(findTestObject('Search/Page_App nghe nhc/div_title'))
+
+//System.out.println(title)
+//
+//TestObject ob = findTestObject("Search/Page_App nghe nhc/div_title")
+//String prop = "//li[2]/div/div[2]/div/p/a" 
+//ob.findProperty("xpath").setValue(prop)
+//
+//title = WebUI.getText(findTestObject('Search/Page_App nghe nhc/div_title'))
+//
+//System.out.println(title)

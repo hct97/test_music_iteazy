@@ -14,9 +14,9 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.m
 DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.cucumber.keyword.internal.CucumberDriverCleaner())
 
 
-RunConfiguration.setExecutionSettingFile('C:\\Users\\TrungHC\\AppData\\Local\\Temp\\Katalon\\Test Cases\\Search\\no_result\\20190502_221529\\execution.properties')
+RunConfiguration.setExecutionSettingFile('C:\\Users\\TrungHC\\AppData\\Local\\Temp\\Katalon\\Test Cases\\UploadSong\\auto_upload\\20190518_231624\\execution.properties')
 
 TestCaseMain.beforeStart()
 
-        TestCaseMain.runTestCase('Test Cases/Search/no_result', new TestCaseBinding('Test Cases/Search/no_result',[:]), FailureHandling.STOP_ON_FAILURE , false)
+        TestCaseMain.runTestCase('Test Cases/UploadSong/auto_upload', new TestCaseBinding('Test Cases/UploadSong/auto_upload',[:]), FailureHandling.STOP_ON_FAILURE , false)
     

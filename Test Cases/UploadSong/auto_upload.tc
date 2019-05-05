@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>have_result</name>
+   <name>auto_upload</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>63921c05-2445-4a7d-bfc6-8e8a0299b0e7</testCaseGuid>
+   <testCaseGuid>e42ef71a-65f2-44d1-8366-d1f8d9aa716d</testCaseGuid>
    <variable>
-      <defaultValue>'yêu'</defaultValue>
+      <defaultValue>'E:\\\\test\\\\'</defaultValue>
       <description></description>
-      <id>0e8acf89-572b-43a4-a493-d401a349e8b1</id>
+      <id>f0cec721-8217-4196-8f81-aca3cffef2ef</id>
       <masked>false</masked>
-      <name>testTitle</name>
+      <name>folderUrl</name>
    </variable>
 </TestCaseEntity>
