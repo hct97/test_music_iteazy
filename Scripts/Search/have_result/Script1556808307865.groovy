@@ -14,6 +14,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.exception.StepErrorException as StepErrorException
 
 WebUI.openBrowser('https://music-iteazy.herokuapp.com/')
 
@@ -29,14 +30,27 @@ result = WebUI.getText(findTestObject('Search/Page_App nghe nhc/Songs available'
 
 WebUI.verifyMatch(result, "[0-9] Songs available", true)
 
-title = WebUI.getText(findTestObject('Search/Page_App nghe nhc/div_title'))
+String[] temp = result.split(" ")
+Integer count = Integer.parseInt(temp[0])
 
-//System.out.println(title)
-//
-//TestObject ob = findTestObject("Search/Page_App nghe nhc/div_title")
-//String prop = "//li[2]/div/div[2]/div/p/a" 
-//ob.findProperty("xpath").setValue(prop)
-//
-//title = WebUI.getText(findTestObject('Search/Page_App nghe nhc/div_title'))
-//
-//System.out.println(title)
+for(int i = 1; i <= count; i++) {
+	String xpath =  "/html[1]/body[1]/main[@class=\"container\"]/div[@class=\"content index\"]/div[@class=\"row\"]/div[@class=\"col-md-8\"]/ul[1]/li[" + i + "]/div[@class=\"row col-12\"]/div[@class=\"col-md-9\"]/div[@class=\"row col-12\"]/p[@class=\"song-title text-white\"]/a[1]"
+	
+	TestObject ob = findTestObject("Search/Page_App nghe nhc/div_title")
+	ob.findProperty("xpath").setValue(xpath)
+	
+	title = WebUI.getText(ob)
+	
+	String[] arrTitle = title.split(" ")
+	Boolean flags = false
+	for (int j = 0; j < arrTitle.length; j++) {
+		System.out.println(testTitle.toLowerCase())
+		System.out.println(arrTitle[j].toLowerCase())
+		if (testTitle.toLowerCase() == arrTitle[j].toLowerCase()) {
+			flags = true
+		}
+	}
+	if(flags == false) {
+		throw new StepErrorException("Result not correct")
+	}
+}

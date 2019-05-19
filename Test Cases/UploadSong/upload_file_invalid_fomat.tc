@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>upload_file_invalid_fomat</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3b25a5be-9a70-4cca-a2c8-a95f46542fb5</testCaseGuid>
+   <variable>
+      <defaultValue>'E:\\\\test\\\\_dota2__kittens_by_rassinya-d7z0mug.png'</defaultValue>
+      <description></description>
+      <id>243ec435-03f4-4e7c-a3f7-646de30a5ad4</id>
+      <masked>false</masked>
+      <name>songUrl</name>
+   </variable>
+</TestCaseEntity>
