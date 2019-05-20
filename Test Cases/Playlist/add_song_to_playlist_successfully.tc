@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>add_song_to_playlist_successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e11a72bb-f47f-4d4a-a76c-19fb599a7cc0</testCaseGuid>
+   <variable>
+      <defaultValue>2</defaultValue>
+      <description></description>
+      <id>151671fe-48b5-4590-97dd-e2f1edacd03b</id>
+      <masked>false</masked>
+      <name>index_playlist</name>
+   </variable>
+</TestCaseEntity>
