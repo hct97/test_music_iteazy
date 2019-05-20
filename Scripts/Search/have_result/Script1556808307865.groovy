@@ -41,15 +41,11 @@ for(int i = 1; i <= count; i++) {
 	
 	title = WebUI.getText(ob)
 	
-	String[] arrTitle = title.split(" ")
 	Boolean flags = false
-	for (int j = 0; j < arrTitle.length; j++) {
-		System.out.println(testTitle.toLowerCase())
-		System.out.println(arrTitle[j].toLowerCase())
-		if (testTitle.toLowerCase() == arrTitle[j].toLowerCase()) {
-			flags = true
-		}
+	if(title.toLowerCase().contains(testTitle.toLowerCase())){
+		flags = true;
 	}
+	
 	if(flags == false) {
 		throw new StepErrorException("Result not correct")
 	}
