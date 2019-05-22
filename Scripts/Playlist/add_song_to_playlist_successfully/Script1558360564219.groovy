@@ -26,7 +26,7 @@ WebUI.click(findTestObject('Object Repository/Playlist/Page_App nghe nhc/a_ADD T
 
 Thread.sleep(2000)
 
-WebUI.selectOptionByIndex(findTestObject('Object Repository/Playlist/Page_App nghe nhc/select_playlist'),2)
+WebUI.selectOptionByIndex(findTestObject('Object Repository/Playlist/Page_App nghe nhc/select_playlist'),index_playlist)
 
 playlistName = WebUI.getAttribute(findTestObject('Object Repository/Playlist/Page_App nghe nhc/select_playlist'), 'value')
 
