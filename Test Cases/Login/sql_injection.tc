@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>sql_injection</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8f19b5b9-5683-45a9-963c-35ae42bd60fc</testCaseGuid>
+</TestCaseEntity>

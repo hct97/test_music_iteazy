@@ -55,5 +55,3 @@ for (int i = 0; i < songs.size(); i++){
 	
 	WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/div_Upload success'))
 }
-
-
