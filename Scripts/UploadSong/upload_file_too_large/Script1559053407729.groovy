@@ -13,19 +13,20 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('https://music-iteazy.herokuapp.com/')
+WebUI.callTestCase(findTestCase('Login/login_successfully'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.navigateToUrl('https://music-iteazy.herokuapp.com/')
+WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/a_Upload'))
 
-WebUI.click(findTestObject('Login/Page_App nghe nhc/a_Login'))
+WebUI.setText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Title_songtitle'), "Test file too large")
 
-WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Email_useremail'), 'huynhchitrung97@gmail.com')
+WebUI.uploadFile(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Song_songsong_url'), songUrl)
 
-WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Password_userpassword'), '\' or \'1\'=\'1')
+WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Singer description_commit'))
 
-WebUI.click(findTestObject('Login/Page_App nghe nhc/input_Remember me_commit'))
+result = WebUI.getText(findTestObject("Object Repository/UploadSong/Page_App nghe nhc/div_Upload failed"))
 
-result = WebUI.getText(findTestObject('Login/Page_App nghe nhc/p_Invalid Email or password'))
+WebUI.verifyMatch(result, "Upload failed", true)
 
-WebUI.verifyMatch(result, 'Invalid Email or password.', true)
+alert = WebUI.getText(findTestObject("Object Repository/UploadSong/Page_App nghe nhc/div_alert1"))
 
+WebUI.verifyMatch(alert, "Song url should be less than 10MB", true)

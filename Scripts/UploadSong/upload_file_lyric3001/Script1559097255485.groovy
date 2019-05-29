@@ -12,25 +12,27 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.exception.StepErrorException as StepErrorException
+
+String lyric = songLyrics.substring(0,3001)
 
 WebUI.callTestCase(findTestCase('Login/login_successfully'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/a_Upload'))
 
-WebUI.setText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Title_songtitle'), "Test invalid fomat")
+WebUI.setText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Title_songtitle'), "Lyric 3001")
 
 WebUI.uploadFile(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Song_songsong_url'), songUrl)
 
 WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Singer description_commit'))
 
-result = WebUI.getText(findTestObject("Object Repository/UploadSong/Page_App nghe nhc/div_Upload failed"))
-
-WebUI.verifyMatch(result, "Upload failed", true)
-
-String[] str = songUrl.split("\\.")
-
-String fomat = "Song url You are not allowed to upload \"" + str[1] + "\" files, allowed types: mp3"
+try {
+	result = WebUI.getText(findTestObject("Object Repository/UploadSong/Page_App nghe nhc/div_Upload failed"))
+	WebUI.verifyMatch(result, "Upload failed", true)
+} catch (Exception e) {
+	throw new StepErrorException("Upload Success, Not Fail")
+}
 
 alert = WebUI.getText(findTestObject("Object Repository/UploadSong/Page_App nghe nhc/div_alert1"))
 
-WebUI.verifyMatch(alert, fomat, true)
+WebUI.verifyMatch(alert, "Lyrics too long", true)

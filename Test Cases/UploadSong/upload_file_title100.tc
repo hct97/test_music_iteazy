@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>upload_file_title100</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>42a2995f-cb21-40cb-9578-a0e834e1984d</testCaseGuid>
+   <variable>
+      <defaultValue>'/Users/trunghc97/Documents/AnhLaAi-PhuongLy.mp3'</defaultValue>
+      <description></description>
+      <id>2fbe9a53-efaa-4fd1-8e9a-f6a83dbaa52d</id>
+      <masked>false</masked>
+      <name>songUrl</name>
+   </variable>
+   <variable>
+      <defaultValue>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'</defaultValue>
+      <description></description>
+      <id>48317ea3-c231-4afd-b43d-a1aa1ab9520c</id>
+      <masked>false</masked>
+      <name>songTitle</name>
+   </variable>
+</TestCaseEntity>
