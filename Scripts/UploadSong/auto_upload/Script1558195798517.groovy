@@ -34,7 +34,7 @@ WebUI.callTestCase(findTestCase('Login/login_successfully'), [:], FailureHandlin
 
 for (int i = 0; i < songs.size(); i++){
 	songUrl = "" + folderUrl + songs[i]
-	if (i == imgs.size()) {
+	if (i >= imgs.size()) {
 		imgUrl =  "" + folderUrl + imgs[0]
 	}
 	else {
@@ -53,5 +53,7 @@ for (int i = 0; i < songs.size(); i++){
 	
 	WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Singer description_commit'))
 	
-	WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/div_Upload success'))
+	result = WebUI.getText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/div_Upload success'))
+
+	WebUI.verifyMatch(result, "Upload success", true)
 }

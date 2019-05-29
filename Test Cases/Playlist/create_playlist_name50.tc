@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>create_playlist_name50</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a4df3ae9-7e60-4528-9eb1-269e86c2c0fe</testCaseGuid>
+   <variable>
+      <defaultValue>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'</defaultValue>
+      <description></description>
+      <id>ce87af17-30ce-4c92-a4e1-e91dc202c3c3</id>
+      <masked>false</masked>
+      <name>name</name>
+   </variable>
+</TestCaseEntity>
