@@ -35,7 +35,7 @@ WebUI.callTestCase(findTestCase('Login/login_successfully'), [:], FailureHandlin
 for (int i = 0; i < songs.size(); i++){
 	songUrl = "" + folderUrl + songs[i]
 	if (i >= imgs.size()) {
-		imgUrl =  "" + folderUrl + imgs[0]
+		imgUrl =  null
 	}
 	else {
 		imgUrl =  "" + folderUrl + imgs[i]
@@ -45,7 +45,8 @@ for (int i = 0; i < songs.size(); i++){
 	
 	WebUI.setText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Title_songtitle'), name[0])
 	
-	WebUI.uploadFile(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Img'), imgUrl)
+	if (imgUrl != null)
+		WebUI.uploadFile(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Img'), imgUrl)
 	
 	WebUI.uploadFile(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Song_songsong_url'), songUrl)
 	
