@@ -22,6 +22,8 @@ WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/a_Upl
 
 WebUI.setText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Title_songtitle'), "Lyric 3001")
 
+WebUI.setText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/textarea_Lyrics_songlyrics'), lyric)
+
 WebUI.uploadFile(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Song_songsong_url'), songUrl)
 
 WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Singer description_commit'))
