@@ -13,20 +13,18 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-
 WebUI.openBrowser('https://music-iteazy.herokuapp.com/')
 
 WebUI.navigateToUrl('https://music-iteazy.herokuapp.com/')
 
 WebUI.click(findTestObject('Login/Page_App nghe nhc/a_Login'))
 
-WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Email_useremail'), 'huynhchitrung97@gmail.com')
+WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Email_useremail'), 'invalidemail@gmail.com')
 
-WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Password_userpassword'), '1234')
+WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Password_userpassword'), 'password')
 
 WebUI.click(findTestObject('Login/Page_App nghe nhc/input_Remember me_commit'))
 
 result = WebUI.getText(findTestObject('Login/Page_App nghe nhc/p_Invalid Email or password'))
 
 WebUI.verifyMatch(result, "Invalid Email or password.", true)
-

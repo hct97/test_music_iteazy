@@ -34,7 +34,7 @@ String[] temp = result.split(" ")
 Integer count = Integer.parseInt(temp[0])
 
 for(int i = 1; i <= count; i++) {
-	String xpath =  "/html[1]/body[1]/main[@class=\"container\"]/div[@class=\"content index\"]/div[@class=\"row\"]/div[@class=\"col-md-8\"]/ul[1]/li[" + i + "]/div[@class=\"row col-12\"]/div[@class=\"col-md-9\"]/div[@class=\"row col-12\"]/p[@class=\"song-title text-white\"]/a[1]"
+	String xpath =  "/html[1]/body[1]/main[@class=\"container\"]/div[@class=\"content index\"]/div[@class=\"row\"]/div[@class=\"col-md-8\"]/ul[1]/li["+ i + "]/div[@class=\"row col-12\"]/div[@class=\"col-md-9\"]/div[@class=\"row col-12\"]/p[@class=\"song-title text-white\"]/a[1]"
 	
 	TestObject ob = findTestObject("Search/Page_App nghe nhc/div_title")
 	ob.findProperty("xpath").setValue(xpath)

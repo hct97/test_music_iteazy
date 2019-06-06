@@ -5,4 +5,18 @@
    <tag></tag>
    <comment></comment>
    <testCaseGuid>a4c2b05c-7960-4588-9f73-1e1901dcc627</testCaseGuid>
+   <variable>
+      <defaultValue>'huynhchitrung97@gmail.com'</defaultValue>
+      <description></description>
+      <id>6abe7693-f96d-4266-ad60-7469fd7f8195</id>
+      <masked>false</masked>
+      <name>email</name>
+   </variable>
+   <variable>
+      <defaultValue>'123456'</defaultValue>
+      <description></description>
+      <id>71c736df-c2bd-452e-bb97-2a46020fe388</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
 </TestCaseEntity>

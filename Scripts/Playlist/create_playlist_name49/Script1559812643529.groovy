@@ -12,19 +12,22 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.exception.StepErrorException as StepErrorException
 
-WebUI.openBrowser('https://music-iteazy.herokuapp.com/')
+String playlistName = name.substring(0,49)
 
-WebUI.navigateToUrl('https://music-iteazy.herokuapp.com/')
+WebUI.callTestCase(findTestCase('Login/login_successfully'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Login/Page_App nghe nhc/a_Login'))
+WebUI.click(findTestObject('Object Repository/Playlist/Page_App nghe nhc/a_Playlist'))
 
-WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Email_useremail'), email)
+WebUI.click(findTestObject('Object Repository/Playlist/Page_App nghe nhc/span_Add Playlist'))
 
-WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Password_userpassword'), password)
+Thread.sleep(2000)
 
-WebUI.click(findTestObject('Login/Page_App nghe nhc/input_Remember me_commit'))
+WebUI.setText(findTestObject('Object Repository/Playlist/Page_App nghe nhc/input_Playlist name_playlistname'), playlistName)
 
-result = WebUI.getText(findTestObject('Login/Page_App nghe nhc/p_Signed in successfully'))
+WebUI.click(findTestObject('Object Repository/Playlist/Page_App nghe nhc/input_Playlist name_commit'))
 
-WebUI.verifyMatch(result, "Signed in successfully.", true)
+result = WebUI.getText(findTestObject('Object Repository/Playlist/Page_App nghe nhc/div_Playlist created'))
+
+WebUI.verifyMatch(result, 'Playlist created', true)
