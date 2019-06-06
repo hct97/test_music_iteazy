@@ -13,18 +13,20 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('https://music-iteazy.herokuapp.com/')
+String lyric = songLyrics.substring(0,2999)
 
-WebUI.navigateToUrl('https://music-iteazy.herokuapp.com/')
+WebUI.callTestCase(findTestCase('Login/login_successfully'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Login/Page_App nghe nhc/a_Login'))
+WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/a_Upload'))
 
-WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Email_useremail'), email)
+WebUI.setText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Title_songtitle'), "Lyric 3000")
 
-WebUI.setText(findTestObject('Login/Page_App nghe nhc/input_Password_userpassword'), password)
+WebUI.setText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/textarea_Lyrics_songlyrics'), lyric)
 
-WebUI.click(findTestObject('Login/Page_App nghe nhc/input_Remember me_commit'))
+WebUI.uploadFile(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Song_songsong_url'), songUrl)
 
-result = WebUI.getText(findTestObject('Login/Page_App nghe nhc/p_Signed in successfully'))
+WebUI.click(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/input_Singer description_commit'))
 
-WebUI.verifyMatch(result, "Signed in successfully.", true)
+result = WebUI.getText(findTestObject('Object Repository/UploadSong/Page_App nghe nhc/div_Upload success'))
+
+WebUI.verifyMatch(result, "Upload success", true)

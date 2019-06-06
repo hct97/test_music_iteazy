@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>login_unsuccessfully</name>
+   <name>login_invalid_email</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>561c98a6-a522-44cd-b72e-f8f443372f67</testCaseGuid>
+   <testCaseGuid>9caa81c8-4c9c-4e8d-93fb-17cfd106bc4d</testCaseGuid>
 </TestCaseEntity>

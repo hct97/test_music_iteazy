@@ -28,4 +28,3 @@ WebUI.click(findTestObject('Object Repository/Playlist/Page_App nghe nhc/input_P
 result = WebUI.getText(findTestObject('Object Repository/Playlist/Page_App nghe nhc/div_Playlist created'))
 
 WebUI.verifyMatch(result, 'Can\'t Create Playlist', true)
-
